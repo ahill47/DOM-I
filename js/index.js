@@ -48,6 +48,23 @@ let navBar= document.querySelectorAll("nav a");
 for (i=0; i<navBar.length; i++){
   navBar[i].innerHTML=siteContent['nav']['nav-item-'+ (i +1)];
 }
+// Update navigation color
+for (i=0; i<navBar.length; i++){
+  navBar[i].style.color= "green";
+};
+//adding new Links to navbar
+let firstNew=document.createElement("a");
+firstNew.innerHTML="Alexis";
+firstNew.setAttribute("href", "#");
+let secondNew=document.createElement("a");
+secondNew.innerHTML="Hill"
+secondNew.setAttribute("href", "#");
+let newNav=document.querySelector('nav');
+newNav.prepend(firstNew);
+newNav.appendChild(secondNew);
+firstNew.style.color="green";
+secondNew.style.color="green";
+
 // middle text
 let middleText = document.querySelector(".cta-text h1");
 middleText.innerHTML=siteContent["cta"]["h1"];
@@ -84,7 +101,6 @@ bottomP[2].innerHTML=siteContent["main-content"]["services-content"];
 // contact info.
 let contactInfo=document.querySelector(".contact h4");
 contactInfo.innerHTML=siteContent["contact"]["contact-h4"];
-
 let addressInfo=document.querySelectorAll('.contact p');
 addressInfo[0].innerHTML=siteContent["contact"]["address"];
 addressInfo[1].innerHTML=siteContent["contact"]["phone"];
