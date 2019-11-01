@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br> Is <br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -40,3 +40,74 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//Navbar
+let navBar= document.querySelectorAll("nav a");
+
+// update navbar
+for (i=0; i<navBar.length; i++){
+  navBar[i].innerText=siteContent['nav']['nav-item-'+ (i +1)];
+}
+// Update navigation color
+for (i=0; i<navBar.length; i++){
+  navBar[i].style.color= "green";
+};
+//adding new Links to navbar
+let firstNew=document.createElement("a");
+firstNew.innerText="Alexis";
+firstNew.setAttribute("href", "#");
+let secondNew=document.createElement("a");
+secondNew.innerText="Hill"
+secondNew.setAttribute("href", "#");
+// using prepend and appendchild
+let newNav=document.querySelector('nav');
+newNav.prepend(firstNew);
+newNav.appendChild(secondNew);
+// change color
+firstNew.style.color="green";
+secondNew.style.color="green";
+
+// middle text
+let middleText = document.querySelector(".cta-text h1");
+middleText.innerHTML=siteContent["cta"]["h1"];
+
+//button styling
+const thebutton= document.querySelector(".cta button");
+thebutton.innerText=siteContent["cta"]["button"];
+
+
+// the round image
+let middleImg = document.getElementById("cta-img");
+middleImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+//main content headers
+let topContent=document.querySelectorAll(".main-content .top-content h4");
+topContent[0].innerText=siteContent["main-content"]["features-h4"];
+topContent[1].innerText=siteContent["main-content"]["about-h4"];
+//middle content headers
+let middleContent=document.querySelectorAll('.main-content .bottom-content h4');
+middleContent[0].innerText=siteContent["main-content"]["services-h4"];
+middleContent[1].innerText=siteContent["main-content"]["product-h4"];
+middleContent[2].innerText=siteContent["main-content"]["vision-h4"];
+// add main-content image
+let mainImg = document.getElementById("middle-img");
+mainImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+//add main-content p
+let topP=document.querySelectorAll(".main-content .top-content p");
+topP[0].innerText=siteContent["main-content"]["features-content"];
+topP[1].innerText=siteContent["main-content"]["about-content"];
+//added bottom content p
+let bottomP=document.querySelectorAll(".main-content .bottom-content p");
+bottomP[0].innerText=siteContent["main-content"]["services-content"];
+bottomP[1].innerText=siteContent["main-content"]["services-content"];
+bottomP[2].innerText=siteContent["main-content"]["services-content"];
+// contact info.
+let contactInfo=document.querySelector(".contact h4");
+contactInfo.innerText=siteContent["contact"]["contact-h4"];
+let addressInfo=document.querySelectorAll('.contact p');
+addressInfo[0].innerTextL=siteContent["contact"]["address"];
+addressInfo[1].innerText=siteContent["contact"]["phone"];
+addressInfo[2].innerText=siteContent["contact"]["email"];
+//footer
+let footerInfo=document.querySelector("footer");
+footerInfo.innerText=siteContent["footer"]["copyright"];
